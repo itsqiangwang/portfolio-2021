@@ -1,0 +1,295 @@
+/*
+all
+*/
+
+html, body{
+    margin: 0;
+    padding: 0;
+    letter-spacing: 0.5pt;
+}
+
+a{
+    color: black;
+    transition: 0.3s;;
+    text-decoration: underline;
+}
+
+section a{
+    color: white;
+}
+
+a:hover{
+    color: rgba(06,30,98,0.5);
+}
+
+p,
+figcaption{
+    margin: 0;
+    padding: 0;
+    font-size: 14pt;
+    font-family: 'Arial', sans-serif;
+    color: white;
+}
+
+.bio{
+    border-bottom: 1px dotted black;
+    background-color: white;
+}
+
+nav{
+    padding: 18pt;
+    font-size: 14pt;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+    position: sticky;
+    top: 0;
+}
+
+nav span{
+    background-color: white;
+}
+
+nav span span{
+    transition: 0.3s;
+}
+
+nav span span:hover{
+    color: rgba(06,30,98,0.5) !important;
+    cursor: pointer;
+}
+
+ol,
+ul{
+    padding: 18pt 0;
+    font-size: 14pt;
+    font-family: 'Arial', sans-serif;
+}
+
+ol li,
+ul li{
+    list-style-type: none;
+}
+
+.white-image{
+    border: 1px solid lightgrey;
+}
+
+/*
+bio
+*/
+
+/*
+index
+*/
+#index{
+    display: none;
+}
+
+#index-view:hover{
+    cursor: pointer;
+    opacity: 1;
+    color: rgba(06,30,98,1);
+}
+
+details,
+summary{
+    outline: none;
+    display: block;
+}
+
+summary{
+    top: 0;
+    position: sticky;
+    z-index: 2;
+    font-size: 14pt;
+    font-family: 'Arial', sans-serif;
+    transition: 0.3s;
+    text-indent: -52pt;
+    margin: 1pt 4pt 1pt 52pt;
+    padding: 1pt 0;
+}
+
+summary:hover{
+    margin-left: 65pt;
+    cursor: pointer;
+    color: rgba(06,30,98,0.5);
+}
+
+summary span:nth-of-type(odd){
+    opacity: 0.5;
+    font-family: 'Times New Roman', serif;
+}
+
+summary::-webkit-details-marker{
+    display: none;
+}
+
+summary:before{
+    content: '+';
+    margin-left: 4pt;
+}
+
+details[open] summary:before{
+    content: '–';
+}
+
+details>*:not(summary){
+    margin: 0 18pt;
+}
+
+section details[open] {
+    background-color: black;
+}
+
+details[open] summary{
+    text-indent: -18pt;
+    margin-left: 18pt;
+}
+
+section details[open] summary{
+    color: rgba(255,255,255,1);
+    /* font-size: 28pt; */
+    /* background-color: white;
+    color: rgba(06,30,98,1); */
+    text-align: center;
+    mix-blend-mode: difference;
+}
+
+section details[open] summary:hover{
+    color: rgba(255,255,255,0.5);
+    /* color: rgba(0,0,0,0.5); */
+}
+
+details figure {
+    display: none;
+    padding-bottom: 18pt;
+}
+
+details[open] figure{
+    display: block;
+}
+
+details img,
+details video{
+    display: block;
+    outline: none;
+    margin: 18pt 0;
+    /* max-width: calc(100vw / 3);
+    max-height: calc(100vh / 3); */
+    max-width: 100%;
+    max-height: 75vh;
+    transition: 0.3s;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+details img:hover,
+details video:hover{
+    /* max-width: 75vw;
+    max-height: 75vh; */
+}
+
+section details[open] span:nth-of-type(3){
+    display: none;
+}
+
+/*
+gallery view
+*/
+#gallery{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    box-sizing: border-box;
+    width: 100%;
+    background-color: black;
+}
+
+#gallery figure{
+    width: calc(100% / 3);
+    margin: 0;
+    padding: 0pt 18pt 18pt 18pt;
+    box-sizing: border-box;
+}
+
+#gallery figure img,
+#gallery figure video{
+    width: 100%;
+}
+
+/* #gallery figcaption span:nth-of-type(odd){
+    opacity: 0.5;
+    font-family: 'Times New Roman', serif;
+} */
+
+/* #gallery figure figcaption span{
+    display: none;
+} */
+
+/*
+mobile view
+*/
+@media only screen and (max-width:480px) {
+    details img,
+    details video{
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    details img:hover,
+    details video:hover{
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    details[open] summary:hover,
+    details summary:hover{
+        color: rgba(06,30,98,1);
+    }
+
+    details summary:hover{
+        margin-left: 52pt;
+    }
+
+    details[open] summary:hover{
+        margin-left: 18pt;
+    }
+
+    #gallery figure{
+        width: 100%;
+    }
+}
+
+/*
+tablet view
+*/
+@media only screen and (min-width: 481px) and (max-width:768px) {
+    details img,
+    details video{
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    details img:hover,
+    details video:hover{
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    details[open] summary:hover,
+    details summary:hover{
+        color: rgba(06,30,98,1);
+    }
+
+    details summary:hover{
+        margin-left: 52pt;
+    }
+
+    details[open] summary:hover{
+        margin-left: 18pt;
+    }
+
+    #gallery figure{
+        width: 50%;
+    }
+}
